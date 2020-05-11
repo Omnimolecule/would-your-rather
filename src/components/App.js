@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared'
+import Login from './Login';
 
 class App extends React.Component {
 
@@ -11,7 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='container'>
-        <h1 className='center'>Would you rather?</h1>
+        <Login />
       </div>
     );
   }
