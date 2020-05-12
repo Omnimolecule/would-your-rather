@@ -1,15 +1,17 @@
 import React from 'react';
 import { connect } from "react-redux";
+import LoginUser from './LoginUser';
 
 class Login extends React.Component {
     render() {
-        {console.log(this.props)}
         return (
             <div>
                 <h1 className='center'>Login</h1>
                 <ul>
                     {this.props.userIds.map((user) =>
-                        <li>{user}</li>
+                        <li key={user}>
+                            <LoginUser userId={user} />
+                        </li>
                     )}
                 </ul>
             </div>
