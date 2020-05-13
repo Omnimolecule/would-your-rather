@@ -4,6 +4,7 @@ import { handleInitialData } from '../actions/shared'
 import Login from './Login';
 import Homescreen from './Homescreen'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import QuestionDetail from './QuestionDetail';
 
 class App extends React.Component {
 
@@ -20,7 +21,8 @@ class App extends React.Component {
     return (
       <Router>
         <div className='container'>
-          <Route path='/' exact><Homescreen /></Route>
+          <Route path='/' exact component={Homescreen} />
+          <Route path='/question/:id' component={QuestionDetail} />
         </div>
       </Router>
     );
