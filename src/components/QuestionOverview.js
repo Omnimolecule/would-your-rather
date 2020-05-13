@@ -1,21 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class QuestionOverview extends React.Component {
     render() {
+        const { author, question } = this.props;
         return (
-            <div className='questionbox'>
-                <div>
+            <Link to={`/question/${question.id}`} className='questionbox'>
+                <div className='question-avatar'>
                     <img
-                        src={this.props.author.avatarURL}
-                        alt={`Avatar of ${this.props.author.name}`}
+                        src={author.avatarURL}
+                        alt={`Avatar of ${author.name}`}
                         className='avatar' />
-                    <span>{this.props.author.name}</span>
+                    <span>{author.name}</span>
                 </div>
-                <hr />
-                <span>Would you rather..?</span><br />
-                <span>... {this.props.question.optionOne.text} or ...</span>
-            </div>
+                <div className='questionbox-info'>
+                    <span>Would you rather..?</span>
+                    <span>... {question.optionOne.text} or ...</span>
+                </div>
+            </Link>
         );
     }
 }
