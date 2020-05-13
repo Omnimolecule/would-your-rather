@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared'
 import Login from './Login';
+import Homescreen from './Homescreen'
 
 class App extends React.Component {
 
@@ -10,12 +11,23 @@ class App extends React.Component {
   }
 
   render() {
+
+    if (!this.props.isLoggedIn) {
+      return <Login />
+    }
+
     return (
       <div className='container'>
-        <Login />
+        <Homescreen />
       </div>
     );
   }
 }
 
-export default connect()(App);
+function mapStateToProps({authedUser, users}) {
+  return {
+    isLoggedIn: authedUser !== null,
+  }
+}
+
+export default connect(mapStateToProps)(App);
