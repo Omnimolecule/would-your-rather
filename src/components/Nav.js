@@ -1,10 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { logout } from '../actions/authedUser';
 
 class Nav extends React.Component {
 
     logout = () => {
-        console.log("Logout");
+        const {dispatch} = this.props;
+        dispatch(logout());
     }
 
     render() {
@@ -35,4 +38,4 @@ class Nav extends React.Component {
     }
 } 
 
-export default Nav;
+export default connect()(Nav);
