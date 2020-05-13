@@ -5,6 +5,7 @@ import Login from './Login';
 import Homescreen from './Homescreen'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import QuestionDetail from './QuestionDetail';
+import Nav from './Nav';
 
 class App extends React.Component {
 
@@ -21,6 +22,7 @@ class App extends React.Component {
     return (
       <Router>
         <div className='container'>
+          <Nav />
           <Route path='/' exact component={Homescreen} />
           <Route path='/question/:id' component={QuestionDetail} />
         </div>
