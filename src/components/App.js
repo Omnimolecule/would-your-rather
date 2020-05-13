@@ -6,6 +6,7 @@ import Homescreen from './Homescreen'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import QuestionDetail from './QuestionDetail';
 import Nav from './Nav';
+import Leaderboard from './Leaderboard';
 
 class App extends React.Component {
 
@@ -25,6 +26,7 @@ class App extends React.Component {
           <Nav />
           <Route path='/' exact component={Homescreen} />
           <Route path='/question/:id' component={QuestionDetail} />
+          <Route path='/leaderboard' component={Leaderboard} />
         </div>
       </Router>
     );
