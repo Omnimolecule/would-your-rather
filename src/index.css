@@ -53,3 +53,17 @@ a {
   display: flex;
   flex-direction: column;
 }
+
+.option-active {
+  border: 1px solid red;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.option-inactive{
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+}

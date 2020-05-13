@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import AnswerStatistics from './AnswerStatistics';
 
 class QuestionDetail extends React.Component {
     render() {
@@ -25,7 +26,7 @@ class QuestionDetail extends React.Component {
                         {answer
                             ? (
                                 <div>
-                                    {answer}
+                                    <AnswerStatistics questionId={question.id} answer={answer} />
                                 </div>
                             )
                             : (
@@ -34,7 +35,6 @@ class QuestionDetail extends React.Component {
                                     <button>{question.optionTwo.text}</button>
                                 </div>
                             )}
-
                     </div>
                 </div>
             </div>
