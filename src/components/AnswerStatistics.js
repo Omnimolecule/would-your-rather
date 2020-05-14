@@ -38,8 +38,8 @@ function mapStateToProps({ questions, authedUser }, { questionId }) {
     const numOptionOne = question.optionOne.votes.length;
     const numOptionTwo = question.optionTwo.votes.length;
     const total = numOptionOne + numOptionTwo;
-    const percentOptionOne = numOptionOne / total * 100;
-    const percentOptionTwo = numOptionTwo / total * 100;
+    const percentOptionOne = (numOptionOne / total * 100).toFixed(2);
+    const percentOptionTwo = (numOptionTwo / total * 100).toFixed(2);
     const answer = getAnswer(question, authedUser);
 
     return {
