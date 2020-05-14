@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import AnswerStatistics from './AnswerStatistics';
 import { handleAnswerQuestion } from '../actions/shared';
 
-class QuestionDetail extends React.Component {
+class QuestionPage extends React.Component {
 
     handleOptionSelected = (answer) => {
         const { dispatch, question } = this.props;
@@ -78,4 +78,4 @@ function mapStateToProps({ questions, users, authedUser }, { match }) {
     }
 }
 
-export default connect(mapStateToProps)(QuestionDetail)
+export default connect(mapStateToProps)(QuestionPage)
