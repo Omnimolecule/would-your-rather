@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import QuestionOverview from './QuestionOverview';
+import QuestionOverview from './QuestionPage';
 
 
 class Homescreen extends React.Component {
