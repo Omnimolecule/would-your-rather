@@ -40,10 +40,12 @@ class Homescreen extends React.Component {
 
 function mapStateToProps({ authedUser, users, questions }) {
     let user = users[authedUser];
-    let answeredQuestions = Object.keys(user.answers);
-    let unansweredQuestions = Object.keys(questions).filter((qId) => !answeredQuestions.includes(qId));
-    console.log(answeredQuestions);
-    console.log(unansweredQuestions);
+    let answeredQuestions = Object.keys(user.answers)
+        .sort((a, b) => questions[b].timestamp - questions[a].timestamp);
+    let unansweredQuestions = Object.keys(questions)
+        .filter((qId) => !answeredQuestions.includes(qId))
+        .sort((a, b) => questions[b].timestamp - questions[a].timestamp);
+
     return {
         user,
         answeredQuestions,
