@@ -26,7 +26,7 @@ function mapStateToProps({ questions }, { questionId, answer }) {
     const numOptionOne = question.optionOne.votes.length;
     const numOptionTwo = question.optionTwo.votes.length;
     const total = numOptionOne + numOptionTwo;
-    const percentOptionOne = numOptionTwo / total * 100;
+    const percentOptionOne = numOptionOne / total * 100;
     const percentOptionTwo = numOptionTwo / total * 100;
 
     return {
