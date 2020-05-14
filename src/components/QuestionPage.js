@@ -6,7 +6,7 @@ class QuestionPage extends React.Component {
 
     render() {
         const { questionId, questionAvailable } = this.props;
-        
+
         if (!questionAvailable) {
             return <h1>404</h1>
         }
@@ -22,6 +22,7 @@ class QuestionPage extends React.Component {
 
 function mapStateToProps({ questions}, { match }) {
     const { id } = match.params;
+    
     let questionAvailable = true;
     
     if (!questions.hasOwnProperty(id)) {

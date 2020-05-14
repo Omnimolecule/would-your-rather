@@ -35,7 +35,7 @@ class App extends React.Component {
   }
 }
 
-function mapStateToProps({ authedUser, users }) {
+function mapStateToProps({ authedUser }) {
   return {
     isLoggedIn: authedUser !== null,
   }
