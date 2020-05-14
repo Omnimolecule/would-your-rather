@@ -1,8 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import AnswerStatistics from './AnswerStatistics';
+import { handleAnswerQuestion } from '../actions/shared';
 
 class QuestionDetail extends React.Component {
+
+    handleOptionSelected = (answer) => {
+        const { dispatch, question } = this.props;
+        dispatch(handleAnswerQuestion(question.id, answer));
+    }
+
+
     render() {
         const { question, author, answer } = this.props;
         if (!question) {
@@ -31,8 +39,8 @@ class QuestionDetail extends React.Component {
                             )
                             : (
                                 <div>
-                                    <button>{question.optionOne.text}</button>
-                                    <button>{question.optionTwo.text}</button>
+                                    <button onClick={() => this.handleOptionSelected('optionOne')}>{question.optionOne.text}</button>
+                                    <button onClick={() => this.handleOptionSelected('optionTwo')}>{question.optionTwo.text}</button>
                                 </div>
                             )}
                     </div>
