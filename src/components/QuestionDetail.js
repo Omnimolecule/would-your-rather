@@ -65,6 +65,9 @@ function getAnswer(question, userId) {
 function mapStateToProps({ questions, users, authedUser }, { match }) {
     const { id } = match.params;
     const question = questions[id];
+    
+    if (!question) return {};
+
     const author = users[question.author];
     const answer = getAnswer(question, authedUser);
 
