@@ -5,7 +5,7 @@ class AnswerStatistics extends React.Component {
     render() {
         const { question, numOptionOne, numOptionTwo, percentOptionOne, percentOptionTwo, answer } = this.props
         return (
-            <div>
+            <div className='answerline'>
                 <div className={answer === 'optionOne' ? 'option-active' : 'option-inactive'}>
                     <span><b>{question.optionOne.text}</b></span><br />
                     <span>Number of People: {numOptionOne}</span><br />

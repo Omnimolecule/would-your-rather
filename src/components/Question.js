@@ -14,10 +14,10 @@ class Question extends React.Component {
     render() {
         const { author, question, answered } = this.props
         return (
-            <div className='questionbox'>
-                <User avatarURL={author.avatarURL} name={author.name}/>
+            <div className='question-detail'>
+                <User avatarURL={author.avatarURL} name={author.name} />
                 <div className='info-column'>
-                    <span>Would you rather...?</span>
+                    <b className='center'>Would you rather...?</b>
                     {answered
                         ? (
                             <div>
@@ -25,7 +25,7 @@ class Question extends React.Component {
                             </div>
                         )
                         : (
-                            <div>
+                            <div className='answerline'>
                                 <button onClick={() => this.handleOptionSelected('optionOne')}>{question.optionOne.text}</button>
                                 <button onClick={() => this.handleOptionSelected('optionTwo')}>{question.optionTwo.text}</button>
                             </div>

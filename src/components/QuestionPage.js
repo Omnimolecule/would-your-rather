@@ -13,7 +13,6 @@ class QuestionPage extends React.Component {
 
         return (
             <div>
-                <h1>Question Detail</h1>
                 <Question questionId={questionId}/>
             </div>
         );
@@ -22,7 +21,7 @@ class QuestionPage extends React.Component {
 
 function mapStateToProps({ questions}, { match }) {
     const { id } = match.params;
-    
+
     let questionAvailable = true;
     
     if (!questions.hasOwnProperty(id)) {
