@@ -11,6 +11,7 @@ class Nav extends React.Component {
     }
 
     render() {
+        const { username } = this.props;
         return (
             <nav className='nav'>
                 <ul>
@@ -29,6 +30,9 @@ class Nav extends React.Component {
                             Leaderboard
                         </NavLink>
                     </li>
+                    <li className='login-info'>
+                        <span>Current user: {username}</span>
+                    </li>
                     <li>
                         <button onClick={this.logout}>Logout</button>
                     </li>
@@ -38,4 +42,11 @@ class Nav extends React.Component {
     }
 }
 
-export default connect()(Nav);
+function mapStateToProps({authedUser, users}) {
+    const username = users[authedUser].name;
+    return {
+        username
+    }
+}
+
+export default connect(mapStateToProps)(Nav);
