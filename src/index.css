@@ -163,3 +163,24 @@ button {
   font-weight: bold;
 }
 
+.question-form {
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-form input {
+  margin: 5px;
+  width: 75%;
+  padding: 5px;
+}
+
+.question-form button {
+  width: 50px;
+  height: 30px;
+  background-color: #a7d9a9;
+  border: 1px solid #044206;
+  margin: 10px;
+  cursor: pointer;
+}

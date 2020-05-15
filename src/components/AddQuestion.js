@@ -44,13 +44,14 @@ class AddQuestion extends React.Component {
 
         return (
             <div>
-                <h1>Add Question</h1>
-                <h3>Would you rather ...?</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <input value={this.state.optionOne} placeholder='Option One' onChange={this.changeOptionOne} />
-                    or
-                    <input value={this.state.optionTwo} placeholder='Option Two' onChange={this.changeOptionTwo} />
+                <h1 className='center'>Add Question</h1>
+                <h3 className='center'>Would you rather ...?</h3>
+                <span>(Please fill in two different options for your friends to pick)</span>
 
+                <form onSubmit={this.handleSubmit} className='question-form'>
+                    <input value={this.state.optionOne} placeholder='Option One' onChange={this.changeOptionOne} />
+                    <span>or</span>
+                    <input value={this.state.optionTwo} placeholder='Option Two' onChange={this.changeOptionTwo} />
                     <button>Add</button>
                 </form>
             </div>

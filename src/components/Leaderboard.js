@@ -8,7 +8,7 @@ class Leaderboard extends React.Component {
         const { users } = this.props;
         return (
             <div className='leaderboard'>
-                <h1>Leaderboard</h1>
+                <h1 className='center'>Leaderboard</h1>
                 <ul>
                     {users.map((user) => (
                         <li key={user.id}>
