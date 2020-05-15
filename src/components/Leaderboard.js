@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import User from './User';
+import LeaderBoardEntry from './LeaderboardEntry';
 
 class Leaderboard extends React.Component {
 
@@ -12,7 +12,7 @@ class Leaderboard extends React.Component {
                 <ul>
                     {users.map((user) => (
                         <li key={user.id}>
-                            <User userId={user.id} />
+                            <LeaderBoardEntry userId={user.id} />
                         </li>
                     ))}
                 </ul>
