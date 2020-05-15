@@ -11,13 +11,12 @@ class LoginUser extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='login-user' onClick={this.login}>
                  <img
                     src={this.props.user.avatarURL}
                     alt={`Avatar of ${this.props.user.name}`}
                     className='avatar' />
                 <span>{this.props.user.name}</span>
-                <button onClick={this.login}>Choose user</button>
             </div>
         );
     }

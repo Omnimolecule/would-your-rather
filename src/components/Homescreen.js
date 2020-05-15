@@ -15,18 +15,20 @@ class Homescreen extends React.Component {
     }
 
     render() {
+        const { showUnanswered } = this.state;
+        const { unansweredQuestions, answeredQuestions, user } = this.props;
         return (
             <div>
-                <h1>Hello {this.props.user.name}</h1>
-                <button onClick={this.toggleQuestions}>Toggle answered/unanswered</button>
+                <h1 className='center'>Hello {user.name}</h1>
+                <button onClick={this.toggleQuestions}>Show {showUnanswered ? 'answered' : 'unanswered'} questions</button>
                 <ul>
                     {this.state.showUnanswered
-                        ? this.props.unansweredQuestions.map((question) => (
+                        ? unansweredQuestions.map((question) => (
                             <li key={question}>
                                 <QuestionOverview questionId={question} />
                             </li>
                         ))
-                        : this.props.answeredQuestions.map((question) => (
+                        : answeredQuestions.map((question) => (
                             <li key={question}>
                                 <QuestionOverview questionId={question} />
                             </li>

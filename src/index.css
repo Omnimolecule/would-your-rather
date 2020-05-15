@@ -1,4 +1,7 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
@@ -23,6 +26,11 @@ a {
   color: #252525;
 }
 
+button {
+  margin:0 auto;
+  display:block;
+}
+
 .avatar {
   height: 50px;
   width: 50px;
@@ -33,7 +41,7 @@ a {
 .questionbox {
   width: 100%;
   max-width: 590px;
-  padding: 10px;
+  padding: 0 10px;
   display: flex;
   margin: 0 auto;
   border: 1px solid #dad7d7;
@@ -41,11 +49,16 @@ a {
   cursor: pointer;
 }
 
+.questionbox-info{
+  margin: auto;
+}
+
 .question-avatar {
   width: 75px;
   margin: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .question-info {
@@ -73,10 +86,8 @@ a {
   flex-direction: row;
   justify-content: flex-start;
   text-decoration: none;
-}
-
-.nav li:first-child {
-  padding-left: 0;
+  background-color: #e3ffe4;
+  border: 1px solid #a7d9a9;
 }
 
 .user {
@@ -84,4 +95,29 @@ a {
   margin: 10px;
   border: 1px solid black;
   border-radius: 5px;
+}
+
+.login-users-list {
+  display: flex;
+  margin:  10px;
+  width: 75%;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.login-user {
+  display: flex;
+  margin: 10px;
+  width: 120px;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #a7d9a9;
+  border-radius: 10px;
+  background-color: #e3ffe4;
+  cursor: pointer;
+  text-align: center;
+}
+
+.active {
+  font-weight: bold;
 }

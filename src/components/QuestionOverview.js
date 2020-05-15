@@ -15,8 +15,7 @@ class QuestionOverview extends React.Component {
                     <span>{author.name}</span>
                 </div>
                 <div className='questionbox-info'>
-                    <span>Would you rather..?</span>
-                    <span>... {question.optionOne.text} or ...</span>
+                    <span>Would you rather {question.optionOne.text} or ...?</span>
                 </div>
             </Link>
         );
