@@ -30,10 +30,8 @@ export default function users(state = {}, action) {
                 }
             }
         case REMOVE_ANSWER_FROM_USER:
-            let clone = {...state[action.authedUser].answers};
-            console.log(clone);
+            let clone = { ...state[action.authedUser].answers };
             delete clone[action.questionId];
-            console.log(clone);
             return {
                 ...state,
                 [action.authedUser]: {

@@ -1,18 +1,22 @@
 import { getInitialData, saveQuestion, saveQuestionAnswer } from "../utils/api"
 import { receiveUsers, addQuestionToUser, addAnswerToUser, removeAnswerFromUser } from "./users";
 import { receiveQuestions, addQuestion, addAnswerToQuestion, removeAnswerToQuestion } from "./questions";
+import { showLoading, hideLoading } from 'react-redux-loading'
 
 export function handleInitialData() {
     return ((dispatch) => {
+        dispatch(showLoading());
         getInitialData().then(({ users, questions }) => {
             dispatch(receiveUsers(users));
             dispatch(receiveQuestions(questions));
+            dispatch(hideLoading());
         });
     });
 }
 
 export function handleAddQuestion(optionOne, optionTwo) {
     return ((dispatch, getState) => {
+        dispatch(showLoading());
         const { authedUser } = getState();
         saveQuestion({
             optionOneText: optionOne,
@@ -21,6 +25,7 @@ export function handleAddQuestion(optionOne, optionTwo) {
         }).then((question) => {
             dispatch(addQuestion(question));
             dispatch(addQuestionToUser(question));
+            dispatch(hideLoading());
         })
     });
 }
