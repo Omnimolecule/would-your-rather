@@ -62,10 +62,11 @@ button {
   align-items: center;
 }
 
-.question-info {
+.info-column {
   margin: 10px;
   display: flex;
   flex-direction: column;
+  margin: auto 10px;
 }
 
 .option-active {
@@ -91,11 +92,25 @@ button {
   border: 1px solid #a7d9a9;
 }
 
-.user {
+.leaderboard li {
+  padding: 0px;
+  margin: 5px;
+}
+
+
+.leaderboard-entry {
   display: flex;
-  margin: 10px;
   border: 1px solid black;
   border-radius: 5px;
+  width: 500px;
+  justify-content: start;
+}
+
+.leaderboard-info {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
 .login-users-list {
@@ -122,3 +137,4 @@ button {
 .active {
   font-weight: bold;
 }
+

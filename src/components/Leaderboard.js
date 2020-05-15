@@ -7,7 +7,7 @@ class Leaderboard extends React.Component {
     render() {
         const { users } = this.props;
         return (
-            <div>
+            <div className='leaderboard'>
                 <h1>Leaderboard</h1>
                 <ul>
                     {users.map((user) => (

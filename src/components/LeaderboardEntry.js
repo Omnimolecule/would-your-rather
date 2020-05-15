@@ -6,10 +6,10 @@ class LeaderBoardEntry extends React.Component {
     render() {
         const { user } = this.props;
         return (
-            <div className='user'>
+            <div className='leaderboard-entry'>
                 <User avatarURL={user.avatarURL} name={user.name}/>
-                <div>
-                    <span>Questions asked: {user.questions.length}</span><br />
+                <div className='info-column'>
+                    <span>Questions asked: {user.questions.length}</span>
                     <span>Answers given: {Object.keys(user.answers).length}</span>
                 </div>
             </div>

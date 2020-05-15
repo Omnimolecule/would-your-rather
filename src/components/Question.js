@@ -16,7 +16,7 @@ class Question extends React.Component {
         return (
             <div className='questionbox'>
                 <User avatarURL={author.avatarURL} name={author.name}/>
-                <div className='question-info'>
+                <div className='info-column'>
                     <span>Would you rather...?</span>
                     {answered
                         ? (
