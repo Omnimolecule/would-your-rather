@@ -14,17 +14,17 @@ class QuestionPage extends React.Component {
 
         return (
             <div>
-                <Question questionId={questionId}/>
+                <Question questionId={questionId} />
             </div>
         );
     }
 }
 
-function mapStateToProps({ questions}, { match }) {
+function mapStateToProps({ questions }, { match }) {
     const { id } = match.params;
 
     let questionAvailable = true;
-    
+
     if (!questions.hasOwnProperty(id)) {
         questionAvailable = false;
     }

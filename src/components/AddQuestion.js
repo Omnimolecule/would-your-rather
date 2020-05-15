@@ -38,7 +38,9 @@ class AddQuestion extends React.Component {
 
     render() {
 
-        if (this.state.toHome === true) {
+        const { toHome, optionOne, optionTwo } = this.state;
+
+        if (toHome === true) {
             return <Redirect to='/' />
         }
 
@@ -49,9 +51,9 @@ class AddQuestion extends React.Component {
                 <span>(Please fill in two different options for your friends to pick)</span>
 
                 <form onSubmit={this.handleSubmit} className='question-form'>
-                    <input value={this.state.optionOne} placeholder='Option One' onChange={this.changeOptionOne} />
+                    <input value={optionOne} placeholder='Option One' onChange={this.changeOptionOne} />
                     <span>or</span>
-                    <input value={this.state.optionTwo} placeholder='Option Two' onChange={this.changeOptionTwo} />
+                    <input value={optionTwo} placeholder='Option Two' onChange={this.changeOptionTwo} />
                     <button>Add</button>
                 </form>
             </div>

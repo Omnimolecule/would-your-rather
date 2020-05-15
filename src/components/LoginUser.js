@@ -6,21 +6,22 @@ import User from './User';
 class LoginUser extends React.Component {
 
     login = () => {
-        this.props.dispatch(setAuthedUser(this.props.user.id));
+        const { dispatch, user } = this.props;
+        dispatch(setAuthedUser(user.id));
     }
 
 
     render() {
-        const {user} = this.props;
+        const { user } = this.props;
         return (
             <div className='login-user' onClick={this.login}>
-                <User avatarURL={user.avatarURL} name={user.name}/>
+                <User avatarURL={user.avatarURL} name={user.name} />
             </div>
         );
     }
 }
 
-function mapStateToProps({users}, {userId}) {
+function mapStateToProps({ users }, { userId }) {
     let user = users[userId];
 
     return {

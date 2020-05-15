@@ -22,7 +22,7 @@ class Homescreen extends React.Component {
                 <h1 className='center'>Hello {user.name}</h1>
                 <button onClick={this.toggleQuestions}>Show {showUnanswered ? 'answered' : 'unanswered'} questions</button>
                 <ul>
-                    {this.state.showUnanswered
+                    {showUnanswered
                         ? unansweredQuestions.map((question) => (
                             <li key={question}>
                                 <QuestionOverview questionId={question} />

@@ -7,7 +7,7 @@ class LeaderBoardEntry extends React.Component {
         const { user } = this.props;
         return (
             <div className='leaderboard-entry'>
-                <User avatarURL={user.avatarURL} name={user.name}/>
+                <User avatarURL={user.avatarURL} name={user.name} />
                 <div className='info-column'>
                     <span>Questions asked: {user.questions.length}</span>
                     <span>Answers given: {Object.keys(user.answers).length}</span>

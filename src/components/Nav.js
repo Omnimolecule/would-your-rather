@@ -6,7 +6,7 @@ import { logout } from '../actions/authedUser';
 class Nav extends React.Component {
 
     logout = () => {
-        const {dispatch} = this.props;
+        const { dispatch } = this.props;
         dispatch(logout());
     }
 
@@ -36,6 +36,6 @@ class Nav extends React.Component {
             </nav>
         );
     }
-} 
+}
 
 export default connect()(Nav);

@@ -24,6 +24,7 @@ class Leaderboard extends React.Component {
 function mapStateToProps({ users }) {
     const userList = Object.keys(users).map((user) => users[user]);
     const sortedList = userList.sort((a, b) => b.questions.length + Object.keys(b.answers).length - a.questions.length - Object.keys(a.answers).length);
+    
     return {
         users: sortedList
     }
