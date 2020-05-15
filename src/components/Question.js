@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import AnswerStatistics from './AnswerStatistics';
 import { handleAnswerQuestion } from '../actions/shared';
+import User from './User';
 
 class Question extends React.Component {
 
@@ -14,13 +15,7 @@ class Question extends React.Component {
         const { author, question, answered } = this.props
         return (
             <div className='questionbox'>
-                <div className='question-avatar'>
-                    <img
-                        src={author.avatarURL}
-                        alt={`Avatar of ${author.name}`}
-                        className='avatar' />
-                    <span>{author.name}</span>
-                </div>
+                <User avatarURL={author.avatarURL} name={author.name}/>
                 <div className='question-info'>
                     <span>Would you rather...?</span>
                     {answered

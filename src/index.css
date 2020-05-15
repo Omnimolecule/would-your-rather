@@ -50,7 +50,8 @@ button {
 }
 
 .questionbox-info{
-  margin: auto;
+  margin: auto 10px;
+  max-width: 75%;
 }
 
 .question-avatar {
@@ -109,13 +110,13 @@ button {
   display: flex;
   margin: 10px;
   width: 120px;
+  height: 120px;
   align-items: center;
   flex-direction: column;
   border: 1px solid #a7d9a9;
   border-radius: 10px;
   background-color: #e3ffe4;
   cursor: pointer;
-  text-align: center;
 }
 
 .active {

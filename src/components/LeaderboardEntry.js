@@ -1,18 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import User from './User';
 
-class User extends React.Component {
+class LeaderBoardEntry extends React.Component {
     render() {
         const { user } = this.props;
         return (
             <div className='user'>
-                <div className='question-avatar'>
-                    <img
-                        src={user.avatarURL}
-                        alt={`Avatar of ${user.name}`}
-                        className='avatar' />
-                    <span>{user.name}</span>
-                </div>
+                <User avatarURL={user.avatarURL} name={user.name}/>
                 <div>
                     <span>Questions asked: {user.questions.length}</span><br />
                     <span>Answers given: {Object.keys(user.answers).length}</span>
@@ -27,4 +22,4 @@ function mapStateToProps({ users }, { userId }) {
     return { user };
 }
 
-export default connect(mapStateToProps)(User)
+export default connect(mapStateToProps)(LeaderBoardEntry)

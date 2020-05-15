@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { setAuthedUser } from '../actions/authedUser';
+import User from './User';
 
 class LoginUser extends React.Component {
 
@@ -10,13 +11,10 @@ class LoginUser extends React.Component {
 
 
     render() {
+        const {user} = this.props;
         return (
             <div className='login-user' onClick={this.login}>
-                 <img
-                    src={this.props.user.avatarURL}
-                    alt={`Avatar of ${this.props.user.name}`}
-                    className='avatar' />
-                <span>{this.props.user.name}</span>
+                <User avatarURL={user.avatarURL} name={user.name}/>
             </div>
         );
     }
