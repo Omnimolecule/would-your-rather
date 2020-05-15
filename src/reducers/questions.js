@@ -50,7 +50,7 @@ export default function questions(state = {}, action) {
                         ...state[action.questionId],
                         optionOne: {
                             ...state[action.questionId].optionOne,
-                            votes: state[action.questionId].optionOne.votes.filter((user) => user != action.authedUser)
+                            votes: state[action.questionId].optionOne.votes.filter((user) => user !== action.authedUser)
                         }
                     }
                 }
@@ -61,7 +61,7 @@ export default function questions(state = {}, action) {
                         ...state[action.questionId],
                         optionTwo: {
                             ...state[action.questionId].optionTwo,
-                            votes: state[action.questionId].optionTwo.votes.filter((user) => user != action.authedUser)
+                            votes: state[action.questionId].optionTwo.votes.filter((user) => user !== action.authedUser)
                         }
                     }
                 }
