@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Question from './Question';
+import QuestionNotFound from './QuestionNotFound';
 
 class QuestionPage extends React.Component {
 
@@ -8,7 +9,7 @@ class QuestionPage extends React.Component {
         const { questionId, questionAvailable } = this.props;
 
         if (!questionAvailable) {
-            return <h1>404</h1>
+            return <QuestionNotFound />
         }
 
         return (
