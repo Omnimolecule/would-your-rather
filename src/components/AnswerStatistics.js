@@ -7,14 +7,17 @@ class AnswerStatistics extends React.Component {
         return (
             <div className='answerline'>
                 <div className={answer === 'optionOne' ? 'option-active' : 'option-inactive'}>
-                    <span><b>{question.optionOne.text}</b></span><br />
-                    <span>Number of People: {numOptionOne}</span><br />
+                    <span><b>{question.optionOne.text}</b></span>
+                    <span>Number of People: {numOptionOne}</span>
                     <span>Percentage: {percentOptionOne}</span>
+                    {answer === 'optionOne' && <span className='center'>Your choice</span>}
                 </div>
                 <div className={answer === 'optionTwo' ? 'option-active' : 'option-inactive'}>
-                    <span><b>{question.optionTwo.text}</b></span><br />
-                    <span>Number of People: {numOptionTwo}</span><br />
+                    <span><b>{question.optionTwo.text}</b></span>
+                    <span>Number of People: {numOptionTwo}</span>
                     <span>Percentage: {percentOptionTwo}</span>
+                    <hr />
+                    {answer === 'optionTwo' && <span className='center'>Your choice</span>}
                 </div>
             </div>
         );

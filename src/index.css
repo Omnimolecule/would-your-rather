@@ -98,6 +98,8 @@ button {
   margin: 10px;
   border-radius: 5px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .option-inactive{
@@ -106,6 +108,8 @@ button {
   margin: 10px;
   border-radius: 5px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav ul {
