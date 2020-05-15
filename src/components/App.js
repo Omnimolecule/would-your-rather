@@ -17,25 +17,23 @@ class App extends React.Component {
   }
 
   render() {
-
-    if (!this.props.isLoggedIn) {
-      return (
-        <Fragment>
-          <LoadingBar />
-          <Login />
-        </Fragment>)
-    }
-
     return (
       <Router>
         <Fragment>
           <LoadingBar />
           <div className='container'>
             <Nav />
-            <Route path='/' exact component={Homescreen} />
-            <Route path='/question/:id' component={QuestionPage} />
-            <Route path='/leaderboard' component={Leaderboard} />
-            <Route path='/add' component={AddQuestion} />
+            {!this.props.isLoggedIn
+              ? <Login />
+              : (
+                <Fragment>
+                  <Route path='/' exact component={Homescreen} />
+                  <Route path='/question/:id' component={QuestionPage} />
+                  <Route path='/leaderboard' component={Leaderboard} />
+                  <Route path='/add' component={AddQuestion} />
+                </Fragment>)
+            }
+
           </div>
         </Fragment>
       </Router>

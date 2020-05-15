@@ -125,6 +125,9 @@ button {
   margin: 5px;
   padding: 5px;
   border: 1px dashed #044206;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .leaderboard li {
@@ -193,4 +196,10 @@ button {
   border: 1px solid #044206;
   margin: 10px;
   cursor: pointer;
+}
+
+.divider{
+  width:5px;
+  height:auto;
+  display:inline-block;
 }
